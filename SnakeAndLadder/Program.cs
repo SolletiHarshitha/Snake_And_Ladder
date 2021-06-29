@@ -4,7 +4,7 @@ namespace SnakeAndLadder
 {
     class Program
     {
-        //Sarting Position is 0
+        //Sarting Position  of the game is 0
         public const int START_POSITION = 0;
         //Final Position is 100 and if the player reach 100 he wins the game
         public const int FINAL_POSITION = 100;
@@ -17,7 +17,7 @@ namespace SnakeAndLadder
             Random random = new Random();
             //Player rolls the dice and gets value of the dice
             int playerRollDice = random.Next(1, 7);
-            Console.WriteLine("Player Dice Value is : ",+playerRollDice);
+            Console.WriteLine("Player Dice Value is : "+playerRollDice);
 
         }
     }
