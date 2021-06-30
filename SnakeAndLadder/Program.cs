@@ -47,12 +47,16 @@ namespace SnakeAndLadder
                 {
                     playerPosition = START_POSITION;
                 }
+                else if(playerNextMove>FINAL_POSITION)
+                {
+                    playerPosition = playerNextMove - playerCurrentMove;
+                }
                 else
                 {
                     playerPosition = playerNextMove;
                 }
             }
-            Console.WriteLine("Player Current Position is : " + playerPosition);
+            Console.WriteLine("Player Current Position after the game is: " + playerPosition);
         }
     }
 }
