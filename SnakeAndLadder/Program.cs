@@ -35,12 +35,13 @@ namespace SnakeAndLadder
         {
             Console.WriteLine("Welcome to Snake And Ladder Game");
             //Initial Position of the Player
-            int playerPosition = 0;
+            int playerPosition = 0,countOfDiceRolling=0;
             Console.WriteLine("Player Initial Position : "+playerPosition);
             while(playerPosition<FINAL_POSITION)
             {
                 //Player rolls the dice and gets value of the dice
                 int playerRollDice = random.Next(1, 7);
+                countOfDiceRolling++;
                 int playerCurrentMove = PlayerMoves(playerRollDice);
                 int playerNextMove = playerPosition + playerCurrentMove;
                 if (playerNextMove < START_POSITION)
@@ -55,8 +56,11 @@ namespace SnakeAndLadder
                 {
                     playerPosition = playerNextMove;
                 }
+                Console.WriteLine("Player current position after rolling the dice is : "+playerPosition);
             }
+            Console.WriteLine();
             Console.WriteLine("Player Current Position after the game is: " + playerPosition);
+            Console.WriteLine("Total number of times the dice rolled in the game is : "+countOfDiceRolling);
         }
     }
 }
