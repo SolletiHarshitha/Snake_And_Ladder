@@ -20,15 +20,12 @@ namespace SnakeAndLadder
             switch(option)
             {
                 case LADDER:
-                    Console.WriteLine("Hurray! It's ladder");
                     playerMove = playerRollDice;
                     break;
                 case SNAKE:
-                    Console.WriteLine("OMG! It's snake");
                     playerMove = -playerRollDice;
                     break;
                 default:
-                    Console.WriteLine("No Play");
                     break;
 
             }
@@ -40,20 +37,22 @@ namespace SnakeAndLadder
             //Initial Position of the Player
             int playerPosition = 0;
             Console.WriteLine("Player Initial Position : "+playerPosition);
-            //Player rolls the dice and gets value of the dice
-            int playerRollDice = random.Next(1, 7);
-            Console.WriteLine("Player Dice Value is : "+playerRollDice);
-            int playerCurrentMove = PlayerMoves(playerRollDice);
-            int playerNextMove = playerPosition + playerCurrentMove;
-            if(playerNextMove<START_POSITION)
+            while(playerPosition<FINAL_POSITION)
             {
-                playerPosition = START_POSITION;
+                //Player rolls the dice and gets value of the dice
+                int playerRollDice = random.Next(1, 7);
+                int playerCurrentMove = PlayerMoves(playerRollDice);
+                int playerNextMove = playerPosition + playerCurrentMove;
+                if (playerNextMove < START_POSITION)
+                {
+                    playerPosition = START_POSITION;
+                }
+                else
+                {
+                    playerPosition = playerNextMove;
+                }
             }
-            else
-            {
-                playerPosition = playerNextMove;
-            }
-            Console.WriteLine("Player Current Position is : "+playerPosition);
+            Console.WriteLine("Player Current Position is : " + playerPosition);
         }
     }
 }
