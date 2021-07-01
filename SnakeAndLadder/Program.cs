@@ -14,15 +14,10 @@ namespace SnakeAndLadder
         public const int LADDER = 1;
         public const int SNAKE = 2;
 
-        //public static int Roll_Dice()
-        //{
-        // random value is given to palyer's dice
-        //return random.Next(1, 7);
-        // }
         public static int PlayerMoves(int playerRollDice)
         {
             int playerMove = 0;
-            // Player Option is gentrated..
+            // Player option is generated
             int option = random.Next(0, 3);
             switch (option)
             {
@@ -47,16 +42,16 @@ namespace SnakeAndLadder
             Player currentPlayer = player1;
 
 
-            //Repeats till the Player reaches the winning position 100.
+            //Repeats till the Player reaches the final position 100.
             while (!endGame)
             {
                 // player rolls the dice and gets the value
                 int player_Roll_Dice = random.Next(1, 7);
 
-                // number of times the dice was played is counted
+                // number of times the dice was rolled is counted
                 currentPlayer.countOfDiceRolled++;
 
-                // The Player then checks for a Option. They are No_Play,Ladder and Snake.
+                // Player checks for am Option.
                 int player_move = PlayerMoves(player_Roll_Dice);
                 if (currentPlayer.playerPosition + player_move == FINAL_POSITION)
                 {
@@ -77,7 +72,7 @@ namespace SnakeAndLadder
                 else
                     currentPlayer.playerPosition = currentPlayer.playerNextMove;
 
-                // Player current position After rolling the Dice
+                // Player current position after rolling the Dice
                 Console.WriteLine(currentPlayer.playerName + " current position after rolling the Dice is " + currentPlayer.playerPosition);
                 if (player_move == 6)
                 {
